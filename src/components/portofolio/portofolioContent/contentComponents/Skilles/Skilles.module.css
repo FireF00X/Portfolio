@@ -1,0 +1,23 @@
+
+.skills-container>ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 50%;
+    text-align: start;
+    justify-content: space-between;
+    margin: 20px auto 0;
+    gap: 10px 20px;
+}
+
+.skills-container>ul li {
+    display: flex;
+    align-items: center;
+    color: #eee;
+    margin-bottom: 10px;
+}
+
+.skills-container ul li img {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}

@@ -1,0 +1,56 @@
+.tabs {
+    height: 100%;
+}
+
+.tabs>div:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.tabs>div:first-child>:global(div) {
+    padding: 1px 15px;
+    border-radius: 8px;
+    transition: .3s;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: white;
+    cursor: pointer;
+}
+
+.tabs>div:first-child>:global(div.active) {
+    background: rgba(255, 217, 68, 0.56);
+    box-shadow: 0 4px 30px rgba(218, 212, 212, 0.3);
+    backdrop-filter: blur(5px);
+    color: #eee;
+}
+
+.tabs>div:first-child>:global(div):hover {
+    color: #ddd;
+    margin: 0 2px;
+    transform: scale(1.07);
+}
+
+/* .content */
+.tabs>div:last-child {
+    height: 100%;
+    /* From https://css.glass */
+    background: rgba(69, 74, 78, 0.27);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.1px);
+    -webkit-backdrop-filter: blur(10.1px);
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+.tabs>div:last-child::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 20px;
+}
+
+.tabs>div:last-child::-webkit-scrollbar-thumb {
+    background: rgba(180, 173, 173, 0.3);
+}

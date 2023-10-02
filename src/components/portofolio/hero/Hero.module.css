@@ -1,0 +1,131 @@
+.hero-container {
+    width: 100%;
+    height: 100%;
+    /* background-color: #eee; */
+    padding: 20px;
+}
+
+/* all card */
+.hero-container .background {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
+    position: relative;
+    overflow: hidden;
+}
+
+/* tag above card */
+.portfolio {
+    position: absolute;
+    z-index: 2;
+    position: relative;
+    padding-left: 20px;
+    font-weight: bold;
+
+}
+
+.portfolio::after {
+    content: '';
+    width: 150px;
+    height: 35px;
+    transform: skew(-50deg);
+    background-color: white;
+    z-index: -1;
+    position: absolute;
+    left: -25px;
+}
+
+
+/* photo */
+.background>.photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: #2d4059;
+    border: 15px solid #22313f;
+    outline: 6px solid #ffd944;
+    position: absolute;
+    right: 30px;
+    top: 50px;
+    transition: .3s;
+    overflow: hidden;
+}
+
+@media only screen and (min-width:825px) and (max-width:1037px) {
+    .background>.photo {
+        right: 20px;
+        top: 60px;
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.background>.photo>img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* tilte */
+.title {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    z-index: 1;
+    line-height: 1.5;
+}
+
+.title>p:nth-child(1) {
+    font-size: 35px;
+}
+
+.title>p:nth-child(2) {
+    margin-left: 20px;
+}
+
+.title>p:nth-child(3) {
+    margin-left: 42px;
+    margin-top: -16px;
+}
+
+.title>p:last-child {
+    color: #ffd944;
+}
+
+/* email at the end of the card */
+.email {
+    background-color: #222831;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    text-align: center;
+    transition: .3s;
+
+}
+
+@media (max-width:768px) {
+    .email {
+        padding: 10px;
+    }
+}
+
+.email>a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-right: 10px;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+
+.email svg {
+    color: #ffd944;
+    font-weight: 100;
+    font-size: 15px;
+    margin-left: 10px;
+}

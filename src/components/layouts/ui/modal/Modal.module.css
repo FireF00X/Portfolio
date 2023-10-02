@@ -1,0 +1,73 @@
+/* overlay details card */
+
+
+.detail-card {
+    position: absolute;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* .detail-card .details */
+.detail-card>div:first-child {
+    background-color: #eee;
+    padding: 20px;
+    width: 700px;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+/* .details .photo img */
+.detail-card>div:first-child>div>img {
+    width: 250px;
+    height: 200px;
+}
+
+/* .buttons */
+.detail-card>div>div:last-child>div {
+    margin-top: 50px;
+
+}
+
+.detail-card>div>div:last-child>div>button:first-child {
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.detail-card>div>div:last-child>div>button:first-child>a {
+    text-decoration: none;
+    color: blue;
+    font-weight: 100;
+}
+
+/* src code button */
+.detail-card>div>div:last-child>div>button:last-child {
+    background-color: #2196f3;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.detail-card>div>div:last-child>div>button:last-child>a {
+    text-decoration: none;
+    color: white;
+}
+
+.detail-card.none {
+    display: none;
+}

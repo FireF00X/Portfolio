@@ -1,0 +1,78 @@
+.info {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.info>div {
+    display: flex;
+}
+
+.info>div>h4 {
+    margin-right: 20px;
+    color: #ffd944;
+}
+
+.info>div>p {
+    color: #eee;
+    text-align: center;
+}
+
+/* links */
+.links>div:first-child {
+    margin: 20px auto;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    font-size: 30px;
+}
+
+.icons>div a {
+    color: #e5e5e5;
+    transition: .3s ;
+}
+
+/* github */
+.icons>div:first-child a:hover {
+    color: #2ea44f;
+}
+
+/* code pen */
+.icons>div:nth-child(2):hover {
+    background-color: #eee;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons>div:nth-child(2):hover a {
+    font-size: 25px;
+    color: black;
+}
+/* linked in */
+.icons>div:nth-child(3) a:hover {
+    color: #0077B5;
+}
+/* whatsapp */
+.icons>div:nth-child(4) a:hover {
+    color: #25D366;
+}
+
+/* facebook */
+.icons>div:nth-child(5) a:hover {
+    color: #1877F2;
+}
+
+/* facebook */
+.icons>div:nth-child(6) a:hover {
+    color: #1877F2;
+}

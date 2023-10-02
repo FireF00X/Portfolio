@@ -1,0 +1,29 @@
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title-container>p {
+    color: #ddd;
+    font-size: 14px;
+}
+
+.title-container>h3 {
+    margin-top: -10px;
+    color: #ffd944;
+    font-size: 23px;
+    position: relative;
+}
+
+.title-container>h3::after {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 2px;
+    background-color: #ffd944;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
