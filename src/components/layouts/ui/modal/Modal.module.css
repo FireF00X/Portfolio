@@ -71,3 +71,12 @@
 .detail-card.none {
     display: none;
 }
+
+@media (max-width:825px) {
+    .detail-card>div:first-child{
+        width: 90%;
+        height: 90%;
+        justify-content: center;
+        flex-direction: column;
+    }
+}

@@ -5,7 +5,7 @@
     width: 50%;
     text-align: start;
     justify-content: space-between;
-    margin: 20px auto 0;
+    margin: 30px auto 0;
     gap: 10px 20px;
 }
 
@@ -20,4 +20,15 @@
     width: 30px;
     height: 30px;
     margin-right: 20px;
+}
+
+@media (max-width:825px){
+    .skills-container>ul{
+        width: 80%;
+    }
+}
+@media (max-width:440px){
+    .skills-container>ul{
+        width: 100%;
+    }
 }

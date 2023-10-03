@@ -54,3 +54,22 @@
 .tabs>div:last-child::-webkit-scrollbar-thumb {
     background: rgba(180, 173, 173, 0.3);
 }
+
+
+@media (max-width:825px) {
+
+    .tabs>div:first-child>:global(div.active) {
+        backdrop-filter: none;
+    }
+
+    .tabs>div:global(:last-child) {
+        backdrop-filter: none;
+    }
+
+}
+
+@media (max-width:440px){
+    .tabs>div:first-child>:global(div){
+        padding: 1px 7px;
+    }
+}

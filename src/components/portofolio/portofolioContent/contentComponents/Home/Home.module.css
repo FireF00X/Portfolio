@@ -76,3 +76,10 @@
 .icons>div:nth-child(6) a:hover {
     color: #1877F2;
 }
+
+@media (max-width:440px){
+    .icons {
+        gap: 15px;
+        font-size: 20px;
+    }
+}
