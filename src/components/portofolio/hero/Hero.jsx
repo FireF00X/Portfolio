@@ -22,7 +22,7 @@ const Hero = () => {
                     <p>Ahmed</p>
                     <p>Elsayed</p>
                     <p>
-                        FrotnEnd Developer
+                        FrontEnd Developer
                     </p>
                 </div>
                 <div className={styles['email']}>
