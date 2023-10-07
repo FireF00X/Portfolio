@@ -1,5 +1,6 @@
 .card {
-    width: 250px;
+    max-width: 250px;
+    width: 100%;
     height: 150px;
     border: 1px solid transparent;
     border-radius: 8px;
@@ -22,7 +23,8 @@
 }
 
 .card>img {
-    width: fit-content;
+    width: 100%;
+    max-width: fit-content;
     height: 100%;
 }
 
@@ -59,6 +61,7 @@
     font-size: 15px;
     font-weight: bold;
     transition: .3s ease-in-out;
+    margin-bottom: 40px;
 }
 
 .see-all a {
@@ -83,6 +86,12 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
+}
+
+@media (max-width:450px) {
+    .projects-container .cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
 }
 
 .cards-container .card {

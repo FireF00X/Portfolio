@@ -69,16 +69,6 @@
     position: relative;
 }
 
-/* .box>div>h3::after,
-.box>form>h3::after{
-    content: "";
-    width: 100%;
-    height: 2px;
-    background-color: yellow;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-} */
 .box .talk>div {
     display: flex;
     flex-wrap: wrap;
@@ -91,7 +81,7 @@
 /* form */
 form.write {
     min-width: 250px;
-    margin-bottom: 50px;
+    padding-bottom: 50px;
 }
 
 form.write input,
@@ -132,6 +122,8 @@ form.write>input:last-child {
     font-weight: bold;
     color: #333;
     transition: .4s ease-in;
+    margin-bottom: 40px;
+
 }
 
 form.write>input:last-child:hover {

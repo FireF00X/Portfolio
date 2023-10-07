@@ -1,12 +1,12 @@
 .about-me {
     height: 100%;
+
 }
 
 .about-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 50px;
     height: 80%;
     margin-top: 20px;
 }
@@ -60,6 +60,7 @@
     letter-spacing: 1px;
 }
 
+
 .about-me a {
     text-decoration: none;
     color: #333;
@@ -70,6 +71,7 @@
     margin-top: auto;
     display: block;
     width: fit-content;
+    margin-bottom: 50px;
 }
 
 .about-me a:hover {

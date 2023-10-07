@@ -1,5 +1,7 @@
 .tabs {
+    position: relative;
     height: 100%;
+    overflow: hidden;
 }
 
 .tabs>div:first-child {
@@ -7,7 +9,7 @@
     justify-content: center;
     align-items: center;
     gap: 5px;
-    margin-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .tabs>div:first-child>:global(div) {
@@ -68,8 +70,9 @@
 
 }
 
-@media (max-width:440px){
-    .tabs>div:first-child>:global(div){
-        padding: 1px 7px;
+@media (max-width:440px) {
+    .tabs>div:first-child>:global(div) {
+        padding: 1px 5px;
+        font-size: 13px;
     }
 }

@@ -1,7 +1,6 @@
 .hero-container {
     width: 100%;
     height: 100%;
-    /* background-color: #eee; */
     padding: 20px;
 }
 
@@ -20,6 +19,7 @@
     z-index: 2;
     position: relative;
     padding-left: 20px;
+    line-height: 2.2;
     font-weight: bold;
 
 }
@@ -55,6 +55,13 @@
     .background>.photo {
         right: 20px;
         top: 60px;
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width:350px) {
+    .background>.photo {
         width: 200px;
         height: 200px;
     }

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
 import styles from './Home.module.css'
 import Title from '../../../../layouts/ui/title/Title';
@@ -33,7 +34,7 @@ const Home = () => {
           </div>
           <div className="cv">
             <h4>Resume: </h4>
-            <p className={styles['cv-box']}>Download CV</p>
+            <a href='https://drive.google.com/file/d/1EtSLnLxxL3B3G6JmKwrm_S9XQyEen_7y/view?usp=drive_link' target='_blank' download={'Ahmed Elsayed.pdf'} className={styles['cv-box']}>Download CV</a>
           </div>
         </div>
 
@@ -52,7 +53,7 @@ const Home = () => {
             </div>
             <div className="linked-in">
               <a href="www.linkedin.com/in/ahmed-mohamed-a6a8a6200">
-              <FontAwesomeIcon icon={faLinkedin} />
+                <FontAwesomeIcon icon={faLinkedin} />
               </a>
             </div>
             <div className="whatsapp">

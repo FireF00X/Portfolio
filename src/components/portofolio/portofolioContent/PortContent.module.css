@@ -1,5 +1,6 @@
-.tabs-container{
+.tabs-container {
     padding: 20px;
-    flex: 1;
-    max-height: 470px;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
 }
