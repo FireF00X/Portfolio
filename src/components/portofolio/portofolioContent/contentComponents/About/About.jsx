@@ -5,7 +5,10 @@ import Title from '../../../../layouts/ui/title/Title';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClockRotateLeft } from '@fortawesome/free-solid-svg-icons';
 
-const About = () => {
+const About = ({ changingTabs }) => {
+  function handleClick() {
+    changingTabs(5)
+  }
   return (
     <div className={styles['about-me']}>
       <Title tilte='Willings' mainTitle='About me' />
@@ -19,7 +22,7 @@ const About = () => {
           <div className={styles['p']}>
             I am a Front-End Web Developer (Reactjs) Seeking To Build up a strong career path, and working in a dynamic environment where ic an develop my skills, gain experience and utilize that towards the growth and development of the orgainzation
           </div>
-          <a href="mailTo:j.ahmed.elsaied@gmail.com" target='_blank'>Contact Me</a>
+          <button onClick={_ => handleClick()}>Contact Me</button>
         </div>
       </div>
     </div>

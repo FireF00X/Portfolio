@@ -1,5 +1,6 @@
 /* children component */
 .contact-box {
+    text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,7 +81,7 @@
 
 /* form */
 form.write {
-    min-width: 250px;
+    min-width: 100px;
     padding-bottom: 50px;
 }
 

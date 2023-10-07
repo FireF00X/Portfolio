@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Tabs from '../../layouts/ui/tabs/Tabs'
 import Tab from '../../layouts/ui/tabs/Tab'
 import styles from './PortContent.module.css'
@@ -9,9 +9,14 @@ import Projects from './contentComponents/Projects/Projects'
 import Home from './contentComponents/Home/Home'
 
 const PortContent = () => {
+    const [defaultActive, setDefaultActive] = useState(1);
+
+    function changingTabs(data) {
+        setDefaultActive(+data);
+    }
     return (
         <div className={styles['tabs-container']}>
-            <Tabs >
+            <Tabs defaultActive={defaultActive} setDefaultActive={setDefaultActive}>
                 <Tab title='Info'>
                     <Home />
                 </Tab>
@@ -21,10 +26,10 @@ const PortContent = () => {
                 <Tab title='Projects'>
                     <Projects />
                 </Tab>
-                <Tab title='About'>
-                    <About />
+                <Tab title='About' >
+                    <About changingTabs={changingTabs} />
                 </Tab>
-                <Tab title='Contact'>
+                <Tab title='Contact' >
                     <Contact />
                 </Tab>
             </Tabs>

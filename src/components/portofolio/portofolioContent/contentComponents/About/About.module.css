@@ -61,20 +61,22 @@
 }
 
 
-.about-me a {
-    text-decoration: none;
+.about-me button {
     color: #333;
     font-weight: bold;
     background-color: #ffd944;
-    padding: 5px 15px;
+    padding: 10px 20px;
     border-radius: 8px;
     margin-top: auto;
-    display: block;
     width: fit-content;
     margin-bottom: 50px;
+    transition: .3s;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 
-.about-me a:hover {
+.about-me button:hover {
     background: rgba(255, 217, 68, 0.56);
     box-shadow: 0 4px 30px rgba(218, 212, 212, 0.3);
     backdrop-filter: blur(5px);

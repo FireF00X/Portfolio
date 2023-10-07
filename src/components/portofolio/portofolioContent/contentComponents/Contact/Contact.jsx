@@ -9,12 +9,12 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const TalkToMeBox = ({ icon, title, paragraph, linkIcon, linkTo }) => {
   return (
-    <div className={styles[`contact-box`]}>
+    <a href={linkTo} target='_blank' className={styles[`contact-box`]}>
       {<i>{icon}</i>}
       <h3>{title}</h3>
       <p>{paragraph}</p>
       <a href={linkTo} target='_blank'>Contact Me <i>{linkIcon}</i></a>
-    </div>
+    </a>
   )
 }
 const object = {
@@ -39,7 +39,7 @@ const Contact = () => {
       });
   };
 
-//==========================
+  //==========================
   const [data, setData] = useState(object);
 
   const handleSubmit = (e) => {
@@ -51,9 +51,9 @@ const Contact = () => {
     const value = e.target.value;
     setData({ ...data, [name]: value })
   }
-//==============================
+  //==============================
   return (
-    <div className={styles['contact-container']}>
+    <div className={styles['contact-container']} id='contact'>
       <Title tilte='Get in Touch' mainTitle={'Contact Me'} />
       <div className={styles['box']}>
         <div className={styles['talk']}>
@@ -76,9 +76,10 @@ const Contact = () => {
 
         {/* start form */}
 
-        
+
         <form className={styles['write']}
-          onSubmit={e => {handleSubmit(e)
+          onSubmit={e => {
+            handleSubmit(e)
             sendEmail(e)
           }}
           ref={form} >
