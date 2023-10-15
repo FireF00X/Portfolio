@@ -15,7 +15,7 @@
     transition: .3s;
 }
 
-.contact-box a {
+.contact-box p:last-child {
     text-decoration: none;
     color: #2d4059;
     margin-top: 10px;
@@ -23,7 +23,7 @@
     transition: .3s;
 }
 
-.contact-box a svg {
+.contact-box p:last-child svg {
     margin-bottom: -2px;
     margin-left: 5px;
 }
@@ -35,7 +35,7 @@
     color: #eee;
 }
 
-.contact-box:hover a {
+.contact-box:hover p {
     transform: scale(1.05);
 }
 
@@ -85,20 +85,19 @@ form.write {
     padding-bottom: 50px;
 }
 
-form.write input,
-form.write textarea {
+form.write>div>input,
+form.write>div>textarea {
     padding: 5px 10px;
     border-radius: 8px;
     outline: none;
-    border: none;
+    border: 1px solid #46606c;
     color: #eee;
     height: 40px;
     width: 100%;
-    background-color: transparent;
-    box-shadow: inset 0 0 16px #ddd;
+    background: linear-gradient(180deg, #121c1ab6, #1d1a2d79);
 }
 
-form.write textarea {
+form.write>div>textarea {
     height: 100px;
     margin-bottom: 0;
     padding-top: 10px;
@@ -119,12 +118,20 @@ form.write>input:last-child {
     box-shadow: none;
     border: none;
     padding: 5px 20px;
+    height: 40px;
+    width: 100%;
+    border-radius: 8px;
     background-color: #ffd944;
     font-weight: bold;
     color: #333;
     transition: .4s ease-in;
     margin-bottom: 40px;
+    cursor: pointer;
+}
 
+form.write>input:last-child.disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
 }
 
 form.write>input:last-child:hover {
@@ -132,4 +139,23 @@ form.write>input:last-child:hover {
     box-shadow: 0 4px 30px rgba(218, 212, 212, 0.3);
     backdrop-filter: blur(5px);
     color: #eee;
+}
+
+form.write>div>input.error,
+form.write>div>textarea.error {
+    border: 1px solid #f44336ed;
+    box-shadow: inset 0 0 16px #dddddd4d;
+
+}
+
+form.write>div>input:focus,
+form.write>div>textarea:focus {
+    border-color: #839faa;
+}
+
+p.error {
+    font-weight: bold;
+    font-size: 12px;
+    color: #f44336;
+    text-align: center;
 }

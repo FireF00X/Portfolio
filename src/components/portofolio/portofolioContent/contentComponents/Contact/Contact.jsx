@@ -1,11 +1,13 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import styles from './Contact.module.css';
 import Title from '../../../../layouts/ui/title/Title';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { useFormik } from 'formik';
+import * as Yup from 'yup'
 
 const TalkToMeBox = ({ icon, title, paragraph, linkIcon, linkTo }) => {
   return (
@@ -13,17 +15,30 @@ const TalkToMeBox = ({ icon, title, paragraph, linkIcon, linkTo }) => {
       {<i>{icon}</i>}
       <h3>{title}</h3>
       <p>{paragraph}</p>
-      <a href={linkTo} target='_blank'>Contact Me <i>{linkIcon}</i></a>
+      <p href={linkTo} target='_blank'>Contact Me <i>{linkIcon}</i></p>
     </a>
   )
 }
-const object = {
-  'user-name': '',
-  'user-email': '',
-  'subject': ''
-}
+
+
 const Contact = () => {
 
+  const formik = useFormik({
+    validateOnMount: true,
+    initialValues: {
+      'user-name': '',
+      'user-email': '',
+      'subject': ''
+    },
+    validationSchema: Yup.object().shape({
+      'user-name': Yup.string().required('Name is Required').min(5, 'Name Must be more than 5 char.'),
+      'user-email': Yup.string().email().required('Email is Required'),
+      'subject': Yup.string().required().min(40, 'Subject message must be more than 40 char.')
+    }),
+    onSubmit: (values) => {
+      formik.resetForm()
+    }
+  })
   //===================
   const form = useRef();
 
@@ -40,17 +55,12 @@ const Contact = () => {
   };
 
   //==========================
-  const [data, setData] = useState(object);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
   }
 
-  function handleChange(e) {
-    const name = e.target.name;
-    const value = e.target.value;
-    setData({ ...data, [name]: value })
-  }
   //==============================
   return (
     <div className={styles['contact-container']} id='contact'>
@@ -79,41 +89,64 @@ const Contact = () => {
 
         <form className={styles['write']}
           onSubmit={e => {
-            handleSubmit(e)
+            handleSubmit(e);
+            formik.handleSubmit();
             sendEmail(e)
           }}
           ref={form} >
           <h3>Write Me Your Project</h3>
           <div className={styles['name']}>
-            <label htmlFor="name">
+            <label htmlFor="name"
+            >
               Name
             </label>
             <input type="text"
+              className={formik.errors['user-name'] && formik.touched['user-name'] ? `${styles.error}` : ''}
               name='user-name'
               id='name'
               placeholder='Enter Your Name'
-              onChange={e => handleChange(e)} />
+              onChange={formik.handleChange}
+              value={formik.values['user-name']}
+              onBlur={formik.handleBlur} />
+
+            {formik.errors['user-name'] && formik.touched['user-name'] ? <p className={styles.error}>{formik.errors['user-name']}</p> : null}
           </div>
+
           <div className={styles['email']}>
             <label htmlFor="email">
               Email
             </label>
             <input type="email"
+              className={formik.errors['user-email'] && formik.touched['user-email'] ? `${styles.error}` : ''}
               name='user-email'
               id='email'
               placeholder=' Enter Your Email'
-              onChange={e => handleChange(e)} />
+              onChange={formik.handleChange}
+              value={formik.values['user-email']}
+              onBlur={formik.handleBlur} />
+
+            {formik.errors['user-email'] && formik.touched['user-email'] ? <p className={styles.error}>{formik.errors['user-email']}</p> : null}
           </div>
+
           <div className={styles['project']}>
             <label htmlFor="project">
               Project
             </label>
             <textarea id='project'
+              className={formik.errors['subject'] && formik.touched['subject'] ? `${styles.error}` : ''}
               name='subject'
               placeholder='Send Me Your Requirements'
-              onChange={e => handleChange(e)} />
+              onChange={formik.handleChange}
+              value={formik.values['subject']}
+              onBlur={formik.handleBlur} />
+
+            {formik.errors['subject'] && formik.touched['subject'] ? <p className={styles.error}>{formik.errors['subject']}</p> : null}
           </div>
-          <input type="submit" value={'Send Project'} />
+          <input
+            className={!formik.isValid ? styles.disabled : ''}
+            type='submit'
+            value={'Send Project'}
+          />
         </form>
       </div>
     </div>
